@@ -1,7 +1,28 @@
 # 安装
 
 ```bash
-cnpm i -g harbor-cli
+# 全局安装
+npm i -g harbor-cli
+
+# 初始化
+cd you-app-dir
+
+# 项目目录下  自动生成 nci.json 和 run.sh
+nci init   
+
+# 配置私服 用户名和密码
+nci config set dockerUser username
+nci config set dockerPass password
+
+# 手动配置 nci.json  "dockerGroup", "baseImage", "appName" 三项 
+
+# 修改 run.sh 应用启动脚本
+
+
+# 生成docker镜像并推送到 harbor私服
+nci docker build 
+
+
 ```
 
 # 命令行界面
@@ -24,7 +45,9 @@ cnpm i -g harbor-cli
 
 # 配置
 
-> 配置文件路径为： ~/.ncirc.json
+> 全局配置文件路径为： ~/.ncirc.json
+
+> 项目配置文件路径为： nci.json
 
 ```json
 { 
