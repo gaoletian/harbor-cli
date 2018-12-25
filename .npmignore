@@ -1,0 +1,6 @@
+.idea
+.npmignore
+.gitignore
+README.md
+nchannel*.tgz
+.git

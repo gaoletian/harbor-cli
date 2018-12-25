@@ -1,0 +1,33 @@
+{
+  "name": "harbor-cli",
+  "version": "1.0.0",
+  "description": "docker镜像命令行工具",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint-friendly": "eslint bin --fix --format 'node_modules/eslint-friendly-formatter'",
+    "lint-unix": "eslint bin --fix --format unix",
+    "lint-html": "eslint bin --fix --format html",
+    "lint-codeframe": "eslint bin --fix --format codeframe"
+  },
+  "main": "nchannel-cli.js",
+  "bin": {
+    "nci": "bin/nci.js",
+    "nci-config": "bin/nci-config.js",
+    "nci-docker": "bin/nci-docker.js",
+    "nci-init": "bin/nci-init.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.puhuitech.cn/nirvana-dev/nchannel/nchannel-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "cli-table": "^0.3.1",
+    "commander": "^2.11.0",
+    "glob": "^7.1.2",
+    "lodash": "^4.17.4"
+  }
+}
