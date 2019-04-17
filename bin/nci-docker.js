@@ -42,7 +42,7 @@ let helpInfo = `
 
 const dockerLoginCmd = `docker login -u ${dockerUser} -p ${dockerPass} ${dockerHost}`;
 
-const checkConfig = () => {
+const checkNciConfig = () => {
 	if (!dockerUser || !dockerPass || !dockerGroup || !appName) {
 		warn(`
 		配置不正确, 请依次执行以下命令
@@ -60,7 +60,7 @@ const checkConfig = () => {
 switch (program.args[0]) {
 	case 'build':
 		{
-			checkConfig();
+			checkNciConfig();
 			mustBeDocker();
 			title('登陆docker');
 			execSync(dockerLoginCmd);
