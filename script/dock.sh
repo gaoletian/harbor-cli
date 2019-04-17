@@ -33,13 +33,13 @@ uploadImage() {
 
 # 创建镜像
 buildImage() {
-  # 重写Dockerfile
-  echoDockerfile
+  # Dockerfile不存在则重写
+  [ ! -e ./Dockerfile ] && echoDockerfile
   # 构建镜像
   if [ -z "$optionTag" ] ; then
     echo $imageTimeTag
     docker build -t $imageTimeTag . &&
-    echo $imageTimeTag > .dockrc &&
+    echo $imageTimeTag > .dockrc
     # 上传镜像
     uploadImage
   else
@@ -57,7 +57,7 @@ run() {
   docker run -it --rm  -e env=test -e PORT0=9000 -p 9000:9000  $imageName
 }
 
-if [ $1 ] && [ $1 == "run" ]; then
+if [ ! -z $1 ] && [ $1 == "run" ]; then
    run
 fi
 
